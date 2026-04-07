@@ -7,6 +7,6 @@ defmodule ImportError.StructureLoader do
   """
   def load do
     config = ImportError.Repo.config() |> Keyword.put(:dump_path, @sql_path)
-    Ecto.Adapters.MyXQL.structure_load(nil, config)
+    IO.inspect(Ecto.Adapters.MyXQL.structure_load(nil, config), label: "result")
   end
 end
